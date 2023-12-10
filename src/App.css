@@ -1,42 +1,55 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+body{
+  font-family: 'Silkscreen', sans-serif;
+
+  overflow: hidden;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #161616;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dropContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  background-color: #282828;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.dropContainer h4{
+  color: #927ef4;
+  transition: all 0.4s;
 }
 
-.card {
-  padding: 2em;
+.drop-zone{
+  width: 200px;
+  background-color: #282928;
+  padding: 25px;
+  padding-bottom: 100px;
+  border-radius: 0 20px 0 20px;
+  transition: all 0.4s;
 }
 
-.read-the-docs {
-  color: #888;
+.items{
+  cursor: pointer;
+  color: white;
+  padding: 0.5em;
+  margin-bottom: 0.4em;
+  border-bottom: 2px solid #cbbddb;
+}
+
+.onDrag{
+  background: rgba(146, 126, 244, 0.7);
+}
+.onDrag h4{
+  color: white;
 }
