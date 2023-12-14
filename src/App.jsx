@@ -8,7 +8,7 @@ const App = () => {
   // Define um componente DraggableItem que pode ser arrastado pelo usuário
   const DraggableItem = ({ item }) => {
     // Usa o hook useDrag do react-dnd para definir o tipo, o item e o estado de arrastar
-    const [{ isDragging }, drag] = useDrag(() => ({
+    const [{isDragging}, drag] = useDrag(() => ({
       type: "item",
       item: { id: item.id },
       collect: (monitor) => ({
@@ -62,13 +62,15 @@ const App = () => {
     // Cria uma nova lista de origem com o item
     const newOriginList = [...originList, item];
     // Atualiza o estado das listas de acordo com a origem e o destino
-    if (originList === listItem) {
-      setListItem(newOriginList);
-      setList2Item(newDestinationList);
-    } else {
-      setListItem(newDestinationList);
-      setList2Item(newOriginList);
-    }
+    // if (originList === listItem) {
+    //   setListItem(newOriginList);
+    //   setList2Item(newDestinationList);
+    // } else {
+    //   setListItem(newDestinationList);
+    //   setList2Item(newOriginList);
+    // }
+    setListItem(originList === listItem ? newOriginList : newDestinationList);
+    setList2Item(originList === listItem ? newDestinationList : newOriginList);
   };
   return (
     <div className="App">
